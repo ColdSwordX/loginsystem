@@ -1,0 +1,120 @@
+﻿/*sets the background color to something colorfull.*/
+body {
+    background: linear-gradient(to left, blue,forestgreen, black, red,mediumblue);
+}
+/*this isthe main information "screen".*/
+.MainPage {
+    position: relative;
+    margin-left:38%;
+    margin-right:38%;
+    margin-top:5%;
+    width: 300px;
+    background-color: black;
+    padding: 16px 0px;
+}
+/*this is the color of the headline.*/
+.MainLabels {
+    position: relative;
+    color: forestgreen;
+    left: 10%;
+}
+/*sets the color of the labels and other text.*/
+.largerFont {
+    color: forestgreen;
+    font-size: larger;
+    left: 10%;
+}
+/*Defines the Editpage setup.*/
+.EditPage {
+    position: relative;
+    margin-left: 38%;
+    margin-right: 38%;
+    margin-top: 5%;
+    width: 300px;
+    background-color: black;
+    padding: 16px 0px;
+}
+/*Sets the color and the position of the labels and text fields within the "box".*/
+.Edit {
+    color: orangered;
+    position: relative;
+    left: 10%;
+}
+/*Sets the screen to be on the left side of the monitor.*/
+.LeftScreen {
+    position: absolute;
+    top: 33%;
+    left: 0;
+}
+
+/*Sets the screen to be on the right side of the monitor.*/
+.RightScreen {
+    position: absolute;
+    top: 33%;
+    right: 20%;
+}
+/*Holds the labels and the colors scheem  of the "boxes" on the page, as well as where the text boxes.*/
+.CreateUser {
+    position: relative;
+    margin-left: 38%;
+    margin-right: 38%;
+    margin-top: 5%;
+    width: 300px;
+    background-color: black;
+    padding: 16px 0px;
+    color: deepskyblue;
+}
+/*holds the button at the bottom of the bage.*/
+.CreateButton {
+    position: relative;
+    margin-left: 38%;
+    margin-right: 38%;
+    margin-top: 10%;
+    width: 300px;
+    padding: 16px 0px;
+    color: deepskyblue;
+}
+/*add a black background color to the navigation bar.*/ 
+.topnav {
+    position: relative;
+    background-color: black;
+    overflow: hidden;
+}
+/*Add some flair to the navigation icons.*/
+    .topnav a {
+        float: left;
+        color: forestgreen;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+        /*Change the color of the icons when its hovered over.*/
+        .topnav a:hover {
+            background-color: orange;
+            color: darkblue;
+        }
+        /*Change the color of the icon to the one that the user i currently on.*/
+        .topnav:active{
+            background-color:black;
+            color: white;
+        }
+    /*Places the text on the right side of the navigation bar.*/
+    .topnav b {
+        float: left;
+        color: forestgreen;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+.deleteUser{
+    position: relative;
+    margin-left: 38%;
+    margin-right: 38%;
+    margin-top: 5%;
+    width: 300px;
+    background-color: black;
+    padding: 16px 0px;
+    color: deepskyblue;
+}

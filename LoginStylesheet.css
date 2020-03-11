@@ -1,0 +1,35 @@
+﻿/*Sets the background to something colorfull.*/
+body {
+    background: linear-gradient(to right,blue,forestgreen, yellow, green, blue);
+}
+/*Tests with a container of the entire page.*/
+.container {
+    position: relative;
+    text-align: center;
+}
+/*The style of the login "screen".*/
+.centerLoginField {
+    position: absolute;
+    left: 38%;
+    top: 33%;
+    width: 300px;
+    text-align: center;
+    background-color:black;
+    border: 3px solid #0025d3;
+}
+/*Sets the header on the "screen" to be a bit bigger.*/
+.largerFont {
+    color: forestgreen;
+    font-size: larger;
+}
+/*Sets the style of the first headline.*/
+.headline {
+    font-size: 6vw;
+    top: 0;
+    right: 0;
+}
+/*change the visibility of the errorfield so that its not always there.*/
+#errorfield {
+    visibility: hidden;
+    color: red;
+}
