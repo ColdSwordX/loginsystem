@@ -29,6 +29,7 @@
                 <asp:Label ID="LCity" runat="server" Text="City: "></asp:Label><br/>
                 <asp:Label ID="LStreet" runat="server" Text="Street: "></asp:Label><br/><br/>
                 <asp:Button ID="Edit" runat="server" Text="Edit Information" OnClick="EditInformaiton" />
+                <asp:Button ID="ChangePass" runat="server" Text="Change Password" OnClick="ShownPNbuttom" />
             </div>
         </div>
         <%-- this block is hidden until the edit button is pressed. --%>
@@ -49,6 +50,13 @@
                 <asp:Label ID="LabelStreet" runat="server" Text="Street: "></asp:Label>
                 <asp:TextBox ID="EditStreet" runat="server" style="position:absolute; right:40px;"></asp:TextBox><br/><br/>
                 <asp:Button ID="EditThis" runat="server" Text="Edit" OnClick="EditClick"/><br/>
+            </div>
+        </div>
+        <div class ="EditPage" id ="ChangeP" runat ="server">
+            <div class ="Edit">
+                <asp:Label ID="NPLable" runat="server" Text="Password: "></asp:Label>
+                <asp:TextBox ID="NPTextBox" runat="server" style="position:absolute; right:40px;"></asp:TextBox><br/>
+                <asp:Button ID="Button1" runat="server" Text="Edit" OnClick="ChangePassword"/><br/>
             </div>
         </div>
     </form>

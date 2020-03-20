@@ -21,6 +21,7 @@ namespace loginsystem
             staticClass.LoginId = 0;
             staticClass.IsAdmin = false;
             staticClass.EditThis = false;
+            staticClass.ChangeP = false;
         }
         protected void Clicked(object sender, EventArgs e)//Trikker on the Onclicked from Html.
         {
@@ -30,27 +31,27 @@ namespace loginsystem
             command = new SqlCommand(cmdstr, conn);
             try
             {
-                //convert the output to an int.
+                //convert the output to an int. and sets it as the id. 
                 staticClass.LoginId = (int)command.ExecuteScalar();
             }
-            catch (Exception)
+            catch
             {
                 //sets the id number to 0 if there is no user that can be found.
                 staticClass.LoginId = 0;
             }
             if (staticClass.LoginId > 0)//Sends the user to the diffrent page if they exists in the database.
             {
-                //funder ud af om brugen der er loget ind er en admin eller ej.
+                //Figures out if the user that have loged in is an Admin or not.
                 cmdstr = "select Admin from login where Id = " + staticClass.LoginId;
                 command = new SqlCommand(cmdstr, conn);
                 SqlDataReader reader = command.ExecuteReader();
-                //så længe der er noget i reader en.
+                //Run as long as there is something in the reader.
                 while (reader.Read())
                 {
                     ChangeState((IDataRecord)reader);
                 }
                 try
-                {
+                {//Figures out of the user is an admin or not
                     if (reader["Admin"] as int? == 1)
                     {
                         staticClass.IsAdmin = true;
@@ -60,14 +61,14 @@ namespace loginsystem
                         staticClass.IsAdmin = false;
                     }
                 }
-                //catch bruges til at fange de fejl der måtte opstå når jeg kalder en database, 
+                // catch bruges til at fange de fejl der måtte opstå når jeg kalder en database, 
                 //og den finder noget som ikke var for ventet.
                 catch (Exception)
                 {
                 }
                 reader.Close();//close the reader.
                 DBConnetorClose();//close the connection.
-                Response.Redirect("UserInfo.aspx");
+                Response.Redirect("Home.aspx");
             }
             else
             {

@@ -18,7 +18,7 @@ namespace loginsystem
         {
             ChangeState();
         }
-        protected void MakeUser(object sender, EventArgs e) 
+        protected void MakeUser(object sender, EventArgs e)//Creates the user based on the input from the website.
         {
             DBConnetorOpen();
             cmdstr = "insert into login (Username, Password) values ('" + UserName.Value + "', '" + Password.Value + "' )" +
@@ -31,11 +31,11 @@ namespace loginsystem
         }
         private void ChangeState()
         {
-            if (staticClass.LoginId == 0)
+            if (staticClass.LoginId == 0)//Finds out if the what is trying to acces this page is loged in.
             {
                 Response.Redirect("login.aspx");
             }
-            if (staticClass.IsAdmin)
+            if (staticClass.IsAdmin)//find out if the current user is admin or not.
             {
                 CreateNew.Visible = true;
                 Delete.Visible = true;

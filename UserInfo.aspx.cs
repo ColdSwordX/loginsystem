@@ -36,6 +36,7 @@ namespace loginsystem
         {
             staticClass.EditThis = true;
             EditPage.Visible = true;
+            ChangeP.Visible = false;
         }
         protected void EditClick(object sender, EventArgs e)
         {
@@ -47,6 +48,21 @@ namespace loginsystem
             command.ExecuteScalar();
             DBConnetorClose();
         }
+        protected void ShownPNbuttom(object sender, EventArgs e)
+        {
+            staticClass.ChangeP = true;
+            ChangeP.Visible = true;
+            EditPage.Visible = false;
+        }
+        protected void ChangePassword(object sender, EventArgs e)
+        {
+            DBConnetorOpen();
+            cmdstr = "update login set password = '" + NPTextBox.Text + "' where Id = " + staticClass.LoginId;
+            command = new SqlCommand(cmdstr, conn);
+            command.ExecuteScalar();
+            DBConnetorClose();
+        }
+
         private void PupluateLabels(IDataRecord record)//adds the persons data to the labels.
         {
             LFirstName.Text = "First Name: " + record[2];
@@ -60,6 +76,7 @@ namespace loginsystem
         private void ChangeState()
         {
             EditPage.Visible = false;
+            ChangeP.Visible = false;
             if (staticClass.LoginId == 0)
             {
                 Response.Redirect("login.aspx");

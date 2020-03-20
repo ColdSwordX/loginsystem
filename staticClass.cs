@@ -11,12 +11,17 @@ namespace loginsystem
         static private int ID;
         static private bool admin;
         static private bool edit;
-        static private string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=Z:\Webtest\loginsystem\App_Data\loginDB.mdf;Integrated Security = True";
+        static private string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ColdSword\source\repos\loginsystem\App_Data\loginDB.mdf;Integrated Security=True";
         static private bool delete;
+        static private bool changeP;
         static public bool Delete {
 
             get { return delete; }
             set { delete = value; }
+        }
+        static public bool ChangeP {
+            get { return changeP; }
+            set { changeP = value; }
         }
         static public string Connection {
             get { return conn; }
